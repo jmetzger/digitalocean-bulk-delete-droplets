@@ -1,0 +1,20 @@
+#!/bin/bash
+
+DROPLETS=$(doctl compute droplet list --no-header --format "ID")
+
+if [ $? -ne 0 ]
+then 
+  echo "Sorry, we did not find any machines. Giving up" 
+fi 
+
+
+for i in $DROPLETS
+do 
+   echo $i  
+done 
+
+echo "Fine. Found"
+
+exit
+
+for i in ID; do  doctl compute droplet delete  174556402; done
